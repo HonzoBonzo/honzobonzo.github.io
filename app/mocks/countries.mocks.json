@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Poland",
+    "continent": "Europe",
+    "geoPermissions": [
+      {
+        "name": "Voice",
+        "isActive": true
+      },
+      {
+        "name": "Messaging",
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "name": "Germany",
+    "continent": "Europe",
+    "geoPermissions": [
+      {
+        "name": "Voice",
+        "isActive": true
+      },
+      {
+        "name": "Messaging",
+        "isActive": true
+      }
+    ]
+  }
+]

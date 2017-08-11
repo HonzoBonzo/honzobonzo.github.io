@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="countriesApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Countries Application</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-resource/angular-resource.js"></script>
+    <script src="../node_modules/angular-route/angular-route.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="core/core.module.js"></script>
+    <script src="core/country-list/country-list.module.js"></script>
+    <script src="core/country-list/country-list.service.js"></script>
+    <script src="core/country-list/country-list.component.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Geographic Permissions
+      </h1>
+      <div>
+        <label for="search"></label>
+        <input id="search" type="text" placeholder="filter by country name">
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li>Voice</li>
+        <li>Messaging</li>
+      </ul>
+    </nav>
+
+    <div ng-view></div>
+
+  </body>
+</html>
