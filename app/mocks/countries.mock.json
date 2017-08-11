@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Poland",
+    "continent": { "id": 1,"name": "Europe" },
+    "geoPermissions": {
+      "voice": true,
+      "messaging": true
+    }
+  },
+  {
+    "name": "Germany",
+    "continent": { "id": 1,"name": "Europe" },
+    "geoPermissions": {
+      "voice": true,
+      "messaging": true
+    }
+  },
+  {
+    "name": "Anguilla",
+    "continent": { "id": 2, "name": "North America" },
+    "geoPermissions": {
+      "voice": true,
+      "messaging": true
+    }
+  },
+  {
+    "name": "Aruba",
+    "continent": { "id": 2, "name": "North America" },
+    "geoPermissions": {
+      "voice": true,
+      "messaging": true
+    }
+  }
+]

@@ -1,17 +1,18 @@
 <!doctype html>
 <html lang="en" ng-app="countriesApp">
   <head>
+    <base href="http://localhost:8000/"
     <meta charset="utf-8">
     <title>Countries Application</title>
-    <script src="../node_modules/angular/angular.js"></script>
-    <script src="../node_modules/angular-resource/angular-resource.js"></script>
-    <script src="../node_modules/angular-route/angular-route.js"></script>
-    <script src="app.module.js"></script>
-    <script src="app.config.js"></script>
-    <script src="core/core.module.js"></script>
-    <script src="core/country-list/country-list.module.js"></script>
-    <script src="core/country-list/country-list.service.js"></script>
-    <script src="core/country-list/country-list.component.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/core/core.module.js"></script>
+    <script src="app/core/country-list/country-list.module.js"></script>
+    <script src="app/core/country-list/country-list.service.js"></script>
+    <script src="app/core/country-list/country-list.component.js"></script>
   </head>
   <body>
     <header>
@@ -25,8 +26,8 @@
     </header>
     <nav>
       <ul>
-        <li>Voice</li>
-        <li>Messaging</li>
+        <li><button>Voice<button></li>
+        <li><button>Messaging<button></li>
       </ul>
     </nav>
 

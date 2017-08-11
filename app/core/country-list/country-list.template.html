@@ -1,0 +1,23 @@
+<ul>
+  <li ng-repeat="region in ::$ctrl.regions">
+    <h2>
+      <input type="checkbox" 
+        name="" 
+        id="{{::region.name}}" 
+        ng-model="region.voicePermission"
+        ng-change="$ctrl.changeAllCountries(region.name)">
+      <label for="{{::region.name}}">{{::region.name}}</label>
+       <button ng-click="$ctrl.sortByName(region.name)">Sort by name</button> 
+    </h2>
+    <ul>
+      <li ng-repeat="country in $ctrl.getCountries(region.name) | orderBy:region.name:region.orderDesc">
+        <input type="checkbox" 
+          name="" 
+          id="{{::country.name}}" 
+          ng-model="country.voicePermission"
+          ng-change="$ctrl.maybeChangeRegionGeoPermission(country.region)">
+        <label for="{{::country.name}}">{{::country.name}}</label>
+      </li>
+    </ul>
+  </li>
+</ul>
