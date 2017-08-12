@@ -1,3 +1,3 @@
 "use strict";
 
-angular.module("core.countryList", ["ngResource"]);
+angular.module("core.countryList", []);
