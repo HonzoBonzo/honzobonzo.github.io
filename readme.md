@@ -8,7 +8,6 @@ Countries should be grouped by continents.
 There should be a possibility to sort countries and enable/disable them (checkbox)
 When you click on checkbox near continent it should disable/enable all countries for the continent. 
 
-When all countries of continent are selected the continent checkbox should be checked, otherwise unchecked.d. The ability to take decision is very important or us :)
+When all countries of continent are selected the continent checkbox should be checked, otherwise unchecked.
 
 In terms of any questions feel free to find your own solutions and do as you understand.
-Please send a solution as public link to github repository and github page. (gh-page)

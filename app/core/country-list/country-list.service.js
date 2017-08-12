@@ -4,7 +4,7 @@ angular.module("core.countryList").factory("CountryService", [
   "$http",
   function($http) {
     function getAllCountries() {
-      return $http.get("app/mocks/all-countries.mock.json").then(response => {
+      return $http.get("https://restcountries.eu/rest/v2/all").then(response => {
         return response.data;
       });
     }
