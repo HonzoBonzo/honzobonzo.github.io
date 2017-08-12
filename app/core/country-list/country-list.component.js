@@ -2,54 +2,28 @@
 
 function CountryListController(CountryService) {
   var vm = this;
-  vm.propertyName = "name";
-  vm.reverse = true;
 
-  vm.regions = [
-    {
-      name: "Europe",
-      voicePermission: false,
-      messagingPermission: false
-    },
-    {
-      name: "Americas",
-      voicePermission: false,
-      messagingPermission: false
-    },
-    {
-      name: "Asia",
-      voicePermission: false,
-      messagingPermission: false
-    },
-    {
-      name: "Oceania",
-      voicePermission: false,
-      messagingPermission: false
-    },
-    {
-      name: "Africa",
-      voicePermission: false,
-      messagingPermission: false
-    },
-    {
-      name: "Polar",
-      voicePermission: false,
-      messagingPermission: false
-    }
-  ];
+  CountryService.getAllRegions().then(function(response) {
+    vm.regions = response;
+  });
 
-  vm.countries = CountryService.query();
-
-  vm.getCountries = function(regionName) {
-    return vm.countries.filter(country => country.region === regionName);
-  };
+  CountryService.getAllCountries().then(function(response) {
+    vm.countries = response;
+  });
 
   vm.maybeChangeRegionGeoPermission = function(countryRegionName) {
-    if (isAnyCountryUnchecked(countryRegionName)) {
-      getRegion(countryRegionName).voicePermission = false;
-    } else {
-      getRegion(countryRegionName).voicePermission = true;
-    }
+    const index = vm.regions.findIndex(
+      region => region.name === countryRegionName
+    );
+
+    vm.regions = [
+      ...vm.regions.slice(0, index),
+      {
+        ...getRegion(countryRegionName),
+        voicePermission: !!!isAnyCountryUnchecked(countryRegionName)
+      },
+      ...vm.regions.slice(index + 1, vm.regions.length)
+    ];
   };
 
   vm.changeAllCountries = function(regionName) {
@@ -68,8 +42,19 @@ function CountryListController(CountryService) {
   };
 
   vm.sortByName = function(regionName) {
-    getRegion(regionName).orderDesc = !getRegion(regionName).orderDesc
-  }
+    const index = vm.regions.findIndex(
+      region => region.name === regionName
+    );
+
+    vm.regions = [
+      ...vm.regions.slice(0, index),
+      {
+        ...getRegion(regionName),
+        orderDesc: !getRegion(regionName).orderDesc
+      },
+      ...vm.regions.slice(index + 1, vm.regions.length)
+    ];
+  };
 
   function getRegion(regionName) {
     return vm.regions.filter(c => c.name === regionName)[0];
@@ -84,5 +69,8 @@ function CountryListController(CountryService) {
 
 angular.module("core.countryList").component("countryList", {
   templateUrl: "app/core/country-list/country-list.template.html",
-  controller: ["CountryService", CountryListController]
+  controller: ["CountryService", CountryListController],
+  bindings: {
+    perm: "@"
+  }
 });

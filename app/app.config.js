@@ -8,10 +8,10 @@ angular.module("countriesApp").config([
 
     $routeProvider
       .when("/voice", {
-        template: "<country-list></country-list>"
+        template: `<country-list perm="voice"></country-list>`
       })
       .when("/messaging", {
-        template: "<country-list></country-list>"
+        template: `<country-list perm="messaging"></country-list>`
       })
       .otherwise("/voice");
   }

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Europe",
+    "voicePermission": false,
+    "messagingPermission": false
+  },
+  {
+    "name": "Americas",
+    "voicePermission": false,
+    "messagingPermission": false
+  },
+  {
+    "name": "Asia",
+    "voicePermission": false,
+    "messagingPermission": false
+  },
+  {
+    "name": "Oceania",
+    "voicePermission": false,
+    "messagingPermission": false
+  },
+  {
+    "name": "Africa",
+    "voicePermission": false,
+    "messagingPermission": false
+  },
+  {
+    "name": "Polar",
+    "voicePermission": false,
+    "messagingPermission": false
+  }
+]
