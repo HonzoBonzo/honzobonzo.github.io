@@ -2,7 +2,9 @@
 
 angular.module("countriesApp").config([
   "$routeProvider",
-  function config( $routeProvider) {
+  "$locationProvider",
+  function config($routeProvider, $locationProvider) {
+    $locationProvider.hashPrefix('!');
     $routeProvider
       .when("/voice", {
         template: `<country-list perm="voice"></country-list>`
