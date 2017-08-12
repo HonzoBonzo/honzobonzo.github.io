@@ -9,8 +9,5 @@
   },
   "author": "Konrad Bysiek",
   "license": "ISC",
-  "dependencies": {
-    "angular": "^1.6.5",
-    "angular-route": "^1.6.5"
-  }
+  "dependencies": {}
 }
