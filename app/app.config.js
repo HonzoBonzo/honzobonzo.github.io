@@ -1,11 +1,8 @@
 "use strict";
 
 angular.module("countriesApp").config([
-  "$locationProvider",
   "$routeProvider",
-  function config($locationProvider, $routeProvider) {
-    $locationProvider.hashPrefix("#");
-
+  function config( $routeProvider) {
     $routeProvider
       .when("/voice", {
         template: `<country-list perm="voice"></country-list>`

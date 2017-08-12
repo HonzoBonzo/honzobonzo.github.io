@@ -1,6 +1,6 @@
 <ul class="list-unstyled">
-  <li ng-repeat="region in $ctrl.regions">
-    <h2>
+  <li class="c-region" ng-repeat="region in $ctrl.regions">
+    <h2 class="c-region__header">
       <input type="checkbox" 
         name="" 
         id="{{::region.name}}" 
@@ -8,13 +8,15 @@
         ng-change="$ctrl.changeAllCountries(region.name)">
       <label for="{{::region.name}}">{{::region.name}}</label>
       <button type="button" 
-        class="btn btn-primary" 
+        class="btn" 
         ng-click="$ctrl.sortByName(region.name)">
         Sort by name
+        <span ng-show="region.orderDesc">&#8593;</span>
+        <span ng-show="!!!region.orderDesc">&#8595;</span>
       </button> 
     </h2>
     <ul class="list-unstyled">
-      <li ng-repeat="country in $ctrl.countries | orderBy:region.name:region.orderDesc" 
+      <li class="c-country" ng-repeat="country in $ctrl.countries | orderBy:region.name:region.orderDesc" 
         ng-if="country.region === region.name">
         <input type="checkbox" 
           name="" 
@@ -22,8 +24,8 @@
           ng-model="country.voicePermission"
           ng-change="$ctrl.maybeChangeRegionGeoPermission(country.region)">
         <label for="{{::country.name}}">{{::country.name}}</label>
-        <span>(+{{country.callingCodes[0]}})</span>
-        <button type="button" class="btn btn-link" >more</button>
+        <span>(+{{::country.callingCodes[0]}})</span>
+        <button type="button" class="btn btn-link c-country__link" >more</button>
       </li>
     </ul>
   </li>

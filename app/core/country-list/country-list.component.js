@@ -71,6 +71,6 @@ angular.module("core.countryList").component("countryList", {
   templateUrl: "app/core/country-list/country-list.template.html",
   controller: ["CountryService", CountryListController],
   bindings: {
-    perm: "@"
+    perm: "@" //wasnt sepcified whether I should handle messaging too, and how it should works 
   }
 });

@@ -1,0 +1,33 @@
+body {
+  width: 100%;
+}
+
+.c-app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.c-app-nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+}
+
+.c-app-nav__element {
+  margin: 5px;
+} 
+
+.c-app-nav__element--inactive button {
+  color: #dd3343;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  margin-right: 20px;
+}

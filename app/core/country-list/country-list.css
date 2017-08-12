@@ -1,0 +1,15 @@
+.c-region__header {
+  border: 1px solid #EBEBEB;
+  background: #F6F6F6;
+  padding: 30px;
+}
+
+.c-country {
+  margin-left: 60px; 
+  padding: 20px;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.c-country__link {
+  color: red;
+}
